@@ -10,7 +10,7 @@ public class ShoeBoxReading : EditorWindow
     private SpriteAlignment pivot = SpriteAlignment.Center;
     private Vector2 customPivot = new Vector2(0.5f, 0.5f);
 
-    [MenuItem("Window/ShoeBox Import")]
+    [MenuItem("Window/ShoeBoxReading/ShoeBox Import")]
     public static void Init()
     {
         EditorWindow.GetWindow(typeof(ShoeBoxReading), false, "ShoeBox Imported");
