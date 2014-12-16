@@ -14,6 +14,6 @@ Save.
 Now in Unity the only file you need is "ShoeBoxReading.cs",it need be inside "Editor" folder.
 Now in Unity in Windows select ShoeBox Reading, and put the xml file, the texture that ShoeBox create, configure and done :D
 
-Also there is a Editor Window that can helo convert all sprite inside one Atlas to invidual prefabs.
+Also there is a Editor Window that can help convert all sprite inside one Atlas to invidual prefabs.
 
 Any problem, please ask.
