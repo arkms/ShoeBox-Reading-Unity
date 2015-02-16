@@ -16,10 +16,6 @@ public class ShoeBoxReading : EditorWindow
         EditorWindow.GetWindow(typeof(ShoeBoxReading), false, "ShoeBox Imported");
     }
 
-    void OnEnable()
-    {
-    }
-
     void OnGUI()
     {
         text = EditorGUILayout.ObjectField("File: ", text, typeof(TextAsset), false);
@@ -52,7 +48,7 @@ public class ShoeBoxReading : EditorWindow
             }
         }
 
-        if (GUILayout.Button("Read"))
+        if (GUILayout.Button("Read") && text != null && texture2d != null)
         {
             Read();
         }
@@ -65,7 +61,7 @@ public class ShoeBoxReading : EditorWindow
         List<SpriteMetaData> listSprite = new List<SpriteMetaData>();
         SpriteMetaData spritedata;
         int imageHeight= texture2d.height;
-        int spriteWidht;
+        int spriteHeight;
         int SpriteY;
         while (reader.Read())
         {
@@ -75,14 +71,14 @@ public class ShoeBoxReading : EditorWindow
                 {
                     //got some info before
                     SpriteY = int.Parse(reader.GetAttribute(2));
-                    spriteWidht= int.Parse(reader.GetAttribute(4));
+                    spriteHeight= int.Parse(reader.GetAttribute(4));
 
                     //create rect of sprite
                     rect = new Rect(
                         int.Parse(reader.GetAttribute(1)), //x
-                        imageHeight - SpriteY - spriteWidht, //y
+                        imageHeight - SpriteY - spriteHeight, //y imageHeight - SpriteY - spriteHeight
                         int.Parse(reader.GetAttribute(3)), //width
-                        spriteWidht //hegith
+                        spriteHeight //hegith
                         ); 
                     
                     //init spritedata
